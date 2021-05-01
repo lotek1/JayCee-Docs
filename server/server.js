@@ -11,9 +11,11 @@ mongoose.connect(
   }
 );
 
-const io = require("socket.io")(3001, {
+const PORT = process.env.PORT || 3001;
+
+const io = require("socket.io")(PORT, {
   cors: {
-    origin: "https://jaycee-docs.netlify.app/",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 });
